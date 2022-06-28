@@ -45,6 +45,11 @@
 								<view>订单编号</view>
 								<view style="color: #323232;">{{orderdetail.order_no}}</view>
 							</view>
+							
+							<view v-if="orderdetail.mode == 3" style="display: flex;align-items: center;justify-content: space-between;">
+								<view>发单人</view>
+								<view style="color: #323232;">{{orderdetail.puser.user.real_name}}</view>
+							</view>
 			
 							<view style="display: flex;align-items: center;justify-content: space-between;">
 								<view>付款时间</view>
@@ -129,9 +134,10 @@
 				this.$emit("closeWindow")
 			},
 			goBack() {
-				uni.navigateTo({
+				uni.reLaunch({
 					url: "/pages/app/index"
 				})
+				
 			}
 		}
 	}

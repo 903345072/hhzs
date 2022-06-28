@@ -118,6 +118,7 @@
 			
 			this.countdown();
 		},
+	    
 		methods: {
 			changeFirst(v){
 				this.first = v
@@ -208,15 +209,16 @@
 							query.select('.item').boundingClientRect(data => {
 								var base_height = 160
 								
-								if(data){
+								if(data != null){
 									base_height = data.height        
 								}
 								if(this.dataList.length > 0){
-									var px = (base_height*this.dataList.length+this.dataList.length*20)
+									var px = (base_height*(this.dataList.length+1)+100)
 									var rpx =  px *(750/ wx.getSystemInfoSync().windowWidth)
 								}else{
 									rpx = 800
 								}
+							
 							
 								 this.$emit('heightChanged',rpx);
 										

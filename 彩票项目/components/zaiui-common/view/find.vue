@@ -106,7 +106,7 @@
 			
 				
 				refresherStatus: 0,
-				swiperHeight: 0,
+				swiperHeight: 1000,
 				tabList: ['人气跟单', '跟单总额', '我的关注'],
 				current: 0, // tabs组件的current值，表示当前活动的tab选项
 
@@ -121,6 +121,7 @@
 	
 		watch: {
 		scrollBottom() {
+			
 			if(this.scrollBottom != 0 && this.index == 1) {
 			var t = this.current
 				this.$refs[t][0].getList(1);
